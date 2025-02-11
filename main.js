@@ -218,7 +218,7 @@ class Game {
     localStorage.setItem("ai_currentPlayer", this.currentPlayer);
   }
 
-  checkInit() {
+  checkAI() {
     let { winner } = this.checkWinner();
     if (!winner && !this.checkDraw()) {
       setTimeout(() => this.aiTurn(), 500);
