@@ -46,7 +46,8 @@ class Game {
   constructor(board, aiMemory) {
     this.board = board;
     this.aiMemory = aiMemory;
-    this.currentPlayer = 1; // 1 = Player (X), 2 = AI (O)
+    this.currentPlayer = parseInt(localStorage.getItem("ai_currentPlayer")) || 1; // 1 = Player (X), 2 = AI (O)
+    this.checkAI();
   }
 
   checkWinner() {
@@ -137,6 +138,7 @@ class Game {
     this.board.updateCell(move.i, move.j, 2);
     this.updateBoard();
     this.currentPlayer = 1;
+    this.saveCurrentPlayer();
   }
 
   updateBoard() {
@@ -188,6 +190,7 @@ class Game {
     
     if (this.board.getBoard()[row][col] === 0) {
       this.currentPlayer = 2;
+      this.saveCurrentPlayer();
       this.board.updateCell(row, col, 1);
       this.updateBoard();
       let { winner } = this.checkWinner();
@@ -200,6 +203,7 @@ class Game {
   resetGame() {
     this.board.resetBoard();
     this.currentPlayer = 1;
+    this.saveCurrentPlayer();
 
     this.updateBoard();
     document.getElementById("msg").style.visibility = "hidden";
@@ -208,6 +212,17 @@ class Game {
       cell.classList.remove("winning-cell");
       cell.addEventListener("click", this.handleCellClick.bind(this));
     });
+  }
+
+  saveCurrentPlayer() {
+    localStorage.setItem("ai_currentPlayer", this.currentPlayer);
+  }
+
+  checkInit() {
+    let { winner } = this.checkWinner();
+    if (!winner && !this.checkDraw()) {
+      setTimeout(() => this.aiTurn(), 500);
+    }
   }
 }
 
