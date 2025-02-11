@@ -60,7 +60,7 @@ To run this game locally, follow these steps:
 
 ## Demo 🎥
 
-You can play the game directly by visiting the [live demo](https://your-demo-link.com).
+You can play the game directly by visiting the [live demo](https://tarekhesham.github.io/tic-tac-toe/).
 
 ---
 
