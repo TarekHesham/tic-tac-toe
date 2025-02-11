@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe - AI Learning</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/566/566294.png" type="image/x-icon">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="http://localhost/NewSite/main.js" defer></script>
+    <link rel="stylesheet" href="http://localhost/NewSite/style.css">
+  </head>
+  <body>
+    <section class="container h-screen content-center mx-auto px-4 py-8">
+      <header>
+        <h1 class="text-4xl text-bold mt-4">Tic Tac Toe</h1>
+      </header>
+      <main>
+        <table id="board">
+          <tr>
+            <td data-row="0" data-col="0"></td>
+            <td data-row="0" data-col="1"></td>
+            <td data-row="0" data-col="2"></td>
+          </tr>
+          <tr>
+            <td data-row="1" data-col="0"></td>
+            <td data-row="1" data-col="1"></td>
+            <td data-row="1" data-col="2"></td>
+          </tr>
+          <tr>
+            <td data-row="2" data-col="0"></td>
+            <td data-row="2" data-col="1"></td>
+            <td data-row="2" data-col="2"></td>
+          </tr>
+        </table>
+      </main>
+      <footer>
+        <div id="msg" class="w-fit mx-auto invisible h-[26px] rounded-md flex items-center bg-slate-100 py-0.5 px-2.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 mr-1.5">
+            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+          </svg>
+  
+          <h2 id="message"></h2>
+        </div>
+        <button class="rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2" onclick="game.resetGame()">Restart Game</button>
+      
+        <p class="absolute bottom-2 left-1/2 transform -translate-x-1/2"><span class="font-bold text-slate-500">&lt;=]-</span>Tarek ElFaramawy<span class="font-bold text-slate-500">-&gt;</span> Coding With Love <span class="text-[red] animate-pulse">❤</span></p>
+      </footer>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    font-family: monospace;
+    text-align: center;
+    background-color: #101218;
+    color: #cddce0;
+    user-select: none;
+}
+
+h1 {
+    word-spacing: -14px;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: math;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    font-size: 4rem;
+    text-align: center;
+    border: 2px solid #282a2c;
+    cursor: pointer;
+
+    &:not(:has(.winning-cell)):hover {
+        background-color: #1b1b1b;
+    }
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.winning-cell {
+    transition: all 500ms ease;
+    background-color: #6ca96c;
+    color: palegoldenrod;
+    &:hover {
+        background-color: #6ca96c !important;
+    }
+}
