@@ -220,7 +220,7 @@ class Game {
 
   checkAI() {
     let { winner } = this.checkWinner();
-    if (!winner && !this.checkDraw()) {
+    if (!winner && !this.checkDraw() && this.currentPlayer === 2) {
       setTimeout(() => this.aiTurn(), 500);
     }
   }
